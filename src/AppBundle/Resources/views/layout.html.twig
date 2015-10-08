@@ -21,6 +21,8 @@
         <div id="content">
             {% block content %}{% endblock %}
 
+            <br /><hr /><br />
+            {{ render(controller('AppBundle:Game:testimonials')) }}
         </div>
         <div id="sidebar">
             <h3>Last Games</h3>

@@ -36,4 +36,16 @@ class GameController extends Controller
     {
         return new Response($this->renderView('AppBundle:Game:failed.html.twig'));
     }
+
+    /**
+     * @Template
+     */
+    public function testimonialsAction()
+    {
+        return array('testimonials' => array(
+            'John Doe' => 'I love this game, so addictive!',
+            'Martin Durand' => 'Best web application ever',
+            'Paul Smith' => 'Awesomeness!',
+        ));
+    }
 }
