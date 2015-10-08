@@ -1,6 +1,10 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
+{% import 'AppBundle::macro.html.twig' as utils %}
+
 {% block content %}
+    {{ utils.breadcrumb({'Home': app.request.attributes.get('_route')}) }}
+
     <h2>Guess the mysterious word</h2>
 
     <p class="attempts">
