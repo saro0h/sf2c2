@@ -1,5 +1,6 @@
 {
-    "name": "saro0h/hangman_project",
+    "name": "sensiolabs/hangman",
+    "description": "Hangman game application in PHP with Symfony.",
     "license": "proprietary",
     "type": "project",
     "autoload": {
