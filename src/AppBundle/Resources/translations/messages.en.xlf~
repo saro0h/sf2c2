@@ -70,17 +70,49 @@
         <source>menu.login</source>
         <target>Login</target>
       </trans-unit>
-      <trans-unit id="8fd59920b1e1f67f4620dd4d6ab7c5b5" resname="Home">
-        <source>home</source>
+      <trans-unit id="8cf04a9734132302f96da8e113e80ce5" resname="Home">
+        <source>Home</source>
         <target>Home</target>
       </trans-unit>
-      <trans-unit id="7fd59920b1e1f67f4620dd4d6ab7c5b6" resname="you_failed">
+      <trans-unit id="cb9749e3b7133685b21c02a1b4303303" resname="you_failed">
         <source>you_failed</source>
         <target>You failed</target>
       </trans-unit>
-      <trans-unit id="6fd59920b1e1f67f4620dd4d6ab7c5b7" resname="you_won">
+      <trans-unit id="1e0136ef5b99f59fe02e5def889a547b" resname="you_won">
         <source>you_won</source>
         <target>You won</target>
+      </trans-unit>
+      <trans-unit id="9fd59920b1e1f67f4620dd4d6ab7c5b3" resname="menu.contact">
+        <source>menu.contact</source>
+        <target>Contact us</target>
+      </trans-unit>
+      <trans-unit id="c3966a674e9c617d45ee35040979e439" resname="access_account">
+        <source>access_account</source>
+        <target>Access your account</target>
+      </trans-unit>
+      <trans-unit id="14c4b06b824ec593239362517f538b29" resname="username">
+        <source>username</source>
+        <target>Username:</target>
+      </trans-unit>
+      <trans-unit id="5f4dcc3b5aa765d61d8327deb882cf99" resname="password">
+        <source>password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="6c45aa59f883c16afdf4b9230cbe1aa5" resname="button.login">
+        <source>button.login</source>
+        <target>login</target>
+      </trans-unit>
+      <trans-unit id="26934eb377001f66e37289a5c93fe284" resname="failed">
+        <source>failed</source>
+        <target>Failed</target>
+      </trans-unit>
+      <trans-unit id="106a6c241b8797f52e1e77317b96a201" resname="home">
+        <source>home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="7b63d1cafe15e5edab88a8e81de794b5" resname="won">
+        <source>won</source>
+        <target>Won</target>
       </trans-unit>
     </body>
   </file>

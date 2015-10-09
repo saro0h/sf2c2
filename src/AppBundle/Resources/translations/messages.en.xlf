@@ -102,6 +102,22 @@
         <source>button.login</source>
         <target>login</target>
       </trans-unit>
+      <trans-unit id="26934eb377001f66e37289a5c93fe284" resname="failed">
+        <source>failed</source>
+        <target>Failed</target>
+      </trans-unit>
+      <trans-unit id="106a6c241b8797f52e1e77317b96a201" resname="home">
+        <source>home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="7b63d1cafe15e5edab88a8e81de794b5" resname="won">
+        <source>won</source>
+        <target>Won</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252da" resname="login">
+        <source>login</source>
+        <target>Login</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

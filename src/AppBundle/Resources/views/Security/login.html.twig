@@ -1,5 +1,9 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
+{% block title %}
+    {{ parent() }} {{ 'login'|trans }}
+{% endblock %}
+
 {% block content %}
     <h2>{{ 'access_account'|trans }}</h2>
 

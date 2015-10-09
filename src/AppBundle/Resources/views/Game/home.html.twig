@@ -2,6 +2,9 @@
 
 {% import 'AppBundle::macro.html.twig' as utils %}
 
+{% block title %}
+    {{ parent() }} {{ 'home'|trans }}
+{% endblock %}
 
 {% block content %}
     {{ utils.breadcrumb({'home': app.request.attributes.get('_route')}) }}

@@ -2,6 +2,10 @@
 
 {% import 'AppBundle::macro.html.twig' as utils %}
 
+{% block title %}
+    {{ parent() }} {{ 'won'|trans }}
+{% endblock %}
+
 {% block content %}
     {{ utils.breadcrumb({'home': 'game_home', 'you_won': app.request.attributes.get('_route')}) }}
 
