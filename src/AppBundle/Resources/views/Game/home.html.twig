@@ -2,13 +2,14 @@
 
 {% import 'AppBundle::macro.html.twig' as utils %}
 
-{% block content %}
-    {{ utils.breadcrumb({'Home': app.request.attributes.get('_route')}) }}
 
-    <h2>Guess the mysterious word</h2>
+{% block content %}
+    {{ utils.breadcrumb({'home': app.request.attributes.get('_route')}) }}
+
+    <h2>{{ 'game.title.guess_mysterious_word'|trans }}</h2>
 
     <p class="attempts">
-        You still have 11 remaining attempts.
+        {{ 'game.attempts'|trans({'%remaining_attempts%': 11}) }}
     </p>
 
     <ul class="word_letters">
@@ -41,12 +42,12 @@
     <br class="clearfix" />
 
     <p class="attempts">
-        <a href="/game/reset">Reset the game</a>
+        <a href="/game/reset">{{ 'game.reset'|trans }}</a>
     </p>
 
     <br class="clearfix" />
 
-    <h2>Try a letter</h2>
+    <h2>{{ 'game.try_a_letter'|trans }}</h2>
 
     <ul>
         {% for letter in 'A'..'Z' %}
@@ -58,13 +59,13 @@
         {% endfor %}
     </ul>
 
-    <h2>Try a word</h2>
+    <h2>{{ 'game.try_word'|trans }}</h2>
 
     <form action="/game/word" method="post">
         <p>
-            <label for="word">Word:</label>
+            <label for="word">{{ 'game.word'|trans }}</label>
             <input type="text" id="word" name="word"/>
-            <button type="submit">Let me guess...</button>
+            <button type="submit">{{ 'game.let_me_guess'|trans }}</button>
         </p>
     </form>
 {% endblock %}

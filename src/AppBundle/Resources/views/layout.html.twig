@@ -21,11 +21,11 @@
         <div id="content">
             {% block content %}{% endblock %}
 
-            <br /><hr /><br />
+            <br /><hr />
             {{ render(controller('AppBundle:Game:testimonials')) }}
         </div>
         <div id="sidebar">
-            <h3>Last Games</h3>
+            <h3>{{ 'last_games'|trans }}</h3>
             <div class="date-list">
                 <ul class="list date-list">
 
@@ -36,7 +36,7 @@
 
                 </ul>
             </div>
-            <h3>Last players</h3>
+            <h3>{{ 'last_players'|trans }}</h3>
             <ul>
                 <li>user 1</li>
                 <li>user 2</li>

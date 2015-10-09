@@ -3,11 +3,11 @@
 {% import 'AppBundle::macro.html.twig' as utils %}
 
 {% block content %}
-    {{ utils.breadcrumb({'Home': 'game_home', 'You failed': app.request.attributes.get('_route')}) }}
+    {{ utils.breadcrumb({'home': 'game_home', 'you_failed': app.request.attributes.get('_route')}) }}
 
-    <h2>Game Over!</h2>
+    <h2>{{ 'fail.title.game_over'|trans }}</h2>
 
     <p>
-        Oops, you're hanged... The word to guess was <strong>xilophon</strong>.
+        {{ 'fail.message.game_over'|trans({'%word%': 'xilophon'})|raw }}.
     </p>
 {% endblock %}
