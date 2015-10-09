@@ -12,7 +12,8 @@
     <h2>{{ 'game.title.guess_mysterious_word'|trans }}</h2>
 
     <p class="attempts">
-        {{ 'game.attempts'|trans({'%remaining_attempts%': 11}) }}
+        {# {{ 'game.attempts'|trans({'%remaining_attempts%': 11}) }} #}
+        {{ 'game.attempts'|transchoice(11) }}
     </p>
 
     <ul class="word_letters">

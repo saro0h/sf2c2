@@ -15,8 +15,8 @@
         <target>Devinez le mot mystérieux</target>
       </trans-unit>
       <trans-unit id="95535a679d039686607fe75c1f4e9859" resname="game.attempts">
-        <source>game.attempts</source>
-        <target>Il vous reste %remaining_attempts% tentatives.</target>
+        <source>No more attempts!|{1} Only one remaining attempt|]1, +Inf[You still have %count% remaining attempts.</source>
+        <target>Vous n'avez plus de tentatives!|{1} Il ne vous reste plus qu'un tentative|]1, +Inf[Il vous reste %count% tentatives.</target>
       </trans-unit>
       <trans-unit id="0f22b7c75cc36da530598fba99808834" resname="game.reset">
         <source>game.reset</source>

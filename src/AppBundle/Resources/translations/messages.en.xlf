@@ -15,8 +15,8 @@
         <target>Guess the mysterious word</target>
       </trans-unit>
       <trans-unit id="95535a679d039686607fe75c1f4e9859" resname="game.attempts">
-        <source>game.attempts</source>
-        <target>You still have %remaining_attempts% remaining attempts.</target>
+        <source>No more attempts!|{1} Only one remaining attempt|]1, +Inf[You still have %count% remaining attempts.</source>
+        <target>No more attempts!|{1} Only one remaining attempt|]1, +Inf[You still have %count% remaining attempts.</target>
       </trans-unit>
       <trans-unit id="0f22b7c75cc36da530598fba99808834" resname="game.reset">
         <source>game.reset</source>
@@ -24,7 +24,7 @@
       </trans-unit>
       <trans-unit id="118d43efb96c9552e4baa0b56c9d97b2" resname="game.try_a_letter">
         <source>game.try_a_letter</source>
-        <target>__game.try_a_letter</target>
+        <target>Try a letter</target>
       </trans-unit>
       <trans-unit id="997e91424e632e8d33b650a379d15834" resname="game.word">
         <source>game.word</source>
