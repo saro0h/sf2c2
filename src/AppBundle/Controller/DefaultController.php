@@ -30,7 +30,17 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/my-birthday/{month}/{day}", name="birthday")
+     * @Route(
+     *     "/my-birthday/{month}/{day}",
+     *     name = "birthday",
+     *     defaults = { "month" = "01", "day" = "01" },
+     *     requirements = {
+     *         "month" = "(0[0-9])|(1[0-2])",
+     *         "day" = "(0[1-9])|([1-2][0-9])|(3[0-1])",
+     *     },
+     *     methods = { "GET" },
+     *     schemes = { "http" }
+     * )
      * @Template
      */
     public function birthdayAction($month, $day)
