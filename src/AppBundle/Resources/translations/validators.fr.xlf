@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="validation.contact.sender" resname="validation.contact.sender">
+        <source>validation.contact.sender</source>
+        <target>Vous devez indiquer un expéditeur</target>
+      </trans-unit>
+      <trans-unit id="validation.contact.message" resname="validation.contact.message">
+        <source>validation.contact.message</source>
+        <target>Vous devez saisir un message</target>
+      </trans-unit>
+      <trans-unit id="validation.contact.subject" resname="validation.contact.subject">
+        <source>validation.contact.subject</source>
+        <target>Vous devez saisir un sujet</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

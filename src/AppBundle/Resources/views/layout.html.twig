@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{% block title 'Hangman -' %}</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/style.css') }}" />
     <link rel="shortcut icon" href="/favicon.ico" />
 </head>
@@ -19,6 +20,12 @@
 
     <div id="page">
         <div id="content">
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="alert alert-success" role="alert">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+
             {% block content %}{% endblock %}
 
             <br /><hr />

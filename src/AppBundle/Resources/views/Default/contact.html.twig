@@ -1,0 +1,11 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Contact
+{% endblock %}
+
+{% block content %}
+    {{ form(form) }}
+{% endblock %}

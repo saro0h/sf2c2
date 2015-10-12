@@ -128,7 +128,7 @@ ul h4 {
     background: #FFFFFF;
     width: 595px;
     color: #6E6E6E;
-    padding: 45px 35px 0 35px;
+    padding: 10px 35px 0 35px;
     float: left;
     border-bottom: solid 2px #BBC1BF;
 }
@@ -203,7 +203,7 @@ ul h4 {
 }
 
 #page {
-    margin: 20px 0 20px 0;
+    margin: 60px 0 20px 0;
     position: relative;
     width: 980px;
     padding: 0;
@@ -269,7 +269,7 @@ ul h4 {
     background: #FFFFFF;
     margin: 0 0 0 685px;
     color: #6E6E6E;
-    padding: 45px 35px 45px 35px;
+    padding: 10px 0px 45px 35px;
     width: 225px;
     border-bottom: solid 2px #BBC1BF;
 }

@@ -118,6 +118,22 @@
         <source>login</source>
         <target>Login</target>
       </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252db" resname="contact.sender">
+        <source>contact.sender</source>
+        <target>Who are you?</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252dc" resname="contact.message">
+        <source>contact.message</source>
+        <target>Your message:</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252dd" resname="contact.subject">
+        <source>contact.subject</source>
+        <target>Subject:</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252di" resname="contact.submit">
+        <source>contact.submit</source>
+        <target>Send my message</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

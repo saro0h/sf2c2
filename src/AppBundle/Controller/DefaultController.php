@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Model\Contact;
+use AppBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,6 +29,28 @@ class DefaultController extends Controller
     public function helloWorldAction($name)
     {
         return array('name' => $name);
+    }
+
+    /**
+     * @Route("{_locale}/contact", name="contact")
+     * @Template
+     */
+    public function contactAction(Request $request)
+    {
+        $contact = new Contact();
+        $form = $this->createForm(new ContactType(), $contact);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // Send an email
+
+            $this->addFlash('notice', 'Your request has been successfully sent.');
+
+            return $this->redirectToRoute('game_home');
+        }
+
+        return array('form' => $form->createView());
     }
 
     /**

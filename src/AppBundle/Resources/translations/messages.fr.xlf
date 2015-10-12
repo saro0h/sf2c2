@@ -15,7 +15,7 @@
         <target>Devinez le mot mystérieux</target>
       </trans-unit>
       <trans-unit id="95535a679d039686607fe75c1f4e9859" resname="game.attempts">
-        <source>No more attempts!|{1} Only one remaining attempt|]1, +Inf[You still have %count% remaining attempts.</source>
+        <source>game.attempts</source>
         <target>Vous n'avez plus de tentatives!|{1} Il ne vous reste plus qu'un tentative|]1, +Inf[Il vous reste %count% tentatives.</target>
       </trans-unit>
       <trans-unit id="0f22b7c75cc36da530598fba99808834" resname="game.reset">
@@ -113,6 +113,22 @@
       <trans-unit id="d56b699830e77ba53855679cb1d252da" resname="login">
         <source>login</source>
         <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252de" resname="contact.sender">
+        <source>contact.sender</source>
+        <target>Qui êtes-vous ?</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252df" resname="contact.message">
+        <source>contact.message</source>
+        <target>Votre message:</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252dg" resname="contact.subject">
+        <source>contact.subject</source>
+        <target>Sujet :</target>
+      </trans-unit>
+      <trans-unit id="d56b699830e77ba53855679cb1d252dj" resname="contact.submit">
+        <source>contact.submit</source>
+        <target>Envoyer mon message</target>
       </trans-unit>
     </body>
   </file>
