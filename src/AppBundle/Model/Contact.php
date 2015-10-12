@@ -8,6 +8,7 @@ class Contact
 {
     /**
      * @Assert\NotBlank(message="validation.contact.sender")
+     * @Assert\Email()
      */
     public $sender;
 

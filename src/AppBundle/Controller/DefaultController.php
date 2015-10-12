@@ -43,7 +43,14 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            // Send an email
+            $message = \Swift_Message::newInstance()
+                ->setTo('sarah.khalil@sensiolabs.com')
+                ->setFrom($contact->sender)
+                ->setSubject($contact->subject)
+                ->setBody($contact->message)
+            ;
+            $mailer = $this->get('mailer');
+            $mailer->send($message);
 
             $this->addFlash('notice', 'Your request has been successfully sent.');
 
