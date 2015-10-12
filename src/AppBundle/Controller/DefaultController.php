@@ -28,4 +28,15 @@ class DefaultController extends Controller
     {
         return array('name' => $name);
     }
+
+    /**
+     * @Route("/my-birthday/{month}/{day}", name="birthday")
+     * @Template
+     */
+    public function birthdayAction($month, $day)
+    {
+        $date = new \Datetime('2015'.'-'.$month.'-'.$day);
+
+        return array('now' => $date);
+    }
 }
