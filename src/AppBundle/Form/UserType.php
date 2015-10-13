@@ -23,6 +23,7 @@ class UserType extends AbstractType
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Type the password again'),
             ))
+            ->add('address', 'address')
             ->add('submit', 'submit')
         ;
     }

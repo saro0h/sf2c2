@@ -37,6 +37,12 @@ class User
      */
     private $password;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Address", cascade={"persist"})
+     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
+     **/
+    private $address;
+
     public function getUsername()
     {
         return $this->username;
@@ -75,5 +81,15 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress(Address $address)
+    {
+        $this->address = $address;
     }
 }
