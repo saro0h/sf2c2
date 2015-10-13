@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Model\Contact;
 use AppBundle\Form\ContactType;
+use AppBundle\Service\ContactService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -43,14 +44,8 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $message = \Swift_Message::newInstance()
-                ->setTo('sarah.khalil@sensiolabs.com')
-                ->setFrom($contact->sender)
-                ->setSubject($contact->subject)
-                ->setBody($contact->message)
-            ;
-            $mailer = $this->get('mailer');
-            $mailer->send($message);
+            $contactService = new ContactService('myemail@mail.com', $this->get('mailer'));
+            $contactService->sendMail($contact);
 
             $this->addFlash('notice', 'Your request has been successfully sent.');
 
