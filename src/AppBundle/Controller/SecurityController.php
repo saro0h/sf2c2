@@ -46,4 +46,14 @@ class SecurityController extends Controller
 
         return array('form' => $form->createView());
     }
+
+    /**
+     * @Route("/users", name="users")
+     * @Template
+     */
+    public function listUsersAction()
+    {
+        return array('users' => $this->getDoctrine()->getRepository('AppBundle:User')->findAll());
+
+    }
 }
