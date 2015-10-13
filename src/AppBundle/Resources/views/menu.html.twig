@@ -1,10 +1,10 @@
 <div id="menu">
     <ul>
         <li class="first current_page_item">
-            <a href="/game/">{{ 'menu.game'|trans }}</a>
+            <a href="/{{ path('game_home') }}">{{ 'menu.game'|trans }}</a>
         </li>
         <li>
-            <a href="/signup">{{ 'menu.register'|trans }}</a>
+            <a href="{{ path('register') }}">{{ 'menu.register'|trans }}</a>
         </li>
         <li>
             <a href="/signin">{{ 'menu.login'|trans }}</a>

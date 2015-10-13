@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Model\Contact;
+use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
 use AppBundle\Service\ContactService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
