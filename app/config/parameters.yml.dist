@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+    dictionnaries:
+        - %kernel.root_dir%/Resources/data/words.txt
+        - %kernel.root_dir%/Resources/data/words.xml
+    word_length: 8

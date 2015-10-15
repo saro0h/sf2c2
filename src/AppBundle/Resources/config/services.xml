@@ -24,10 +24,7 @@
                 <argument type="service" id="loader.xml" />
             </call>
             <call method="loadDictionaries">
-                <argument type="collection">
-                    <argument key="0">%kernel.root_dir%/Resources/data/words.txt</argument>
-                    <argument key="1">%kernel.root_dir%/Resources/data/words.xml</argument>
-                </argument>
+                <argument>%dictionnaries%</argument>
             </call>
         </service>
 

@@ -27,7 +27,7 @@ class GameController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('AppBundle:Game:home.html.twig', array('game' => $this->get('game_runner')->loadGame()));
+        return $this->render('AppBundle:Game:home.html.twig', array('game' => $this->get('game_runner')->loadGame($this->getParameter('word_length'))));
     }
 
     /**
