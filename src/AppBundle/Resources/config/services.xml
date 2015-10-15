@@ -10,5 +10,34 @@
         <service id="form.type.address" class="AppBundle\Form\AddressType">
             <tag name="form.type" alias="address" />
         </service>
+
+        <service id="loader.txt" class="AppBundle\Game\Loader\TextFileLoader" />
+        <service id="loader.xml" class="AppBundle\Game\Loader\XmlFileLoader" />
+
+        <service id="wordlist" class="AppBundle\Game\WordList">
+            <call method="addLoader">
+                <argument>txt</argument>
+                <argument type="service" id="loader.txt" />
+            </call>
+            <call method="addLoader">
+                <argument>xml</argument>
+                <argument type="service" id="loader.xml" />
+            </call>
+            <call method="loadDictionaries">
+                <argument type="collection">
+                    <argument key="0">%kernel.root_dir%/Resources/data/words.txt</argument>
+                    <argument key="1">%kernel.root_dir%/Resources/data/words.xml</argument>
+                </argument>
+            </call>
+        </service>
+
+        <service id="game_context" class="AppBundle\Game\GameContext">
+            <argument type="service" id="session" />
+        </service>
+
+        <service id="game_runner" class="AppBundle\Game\GameRunner">
+            <argument type="service" id="game_context" />
+            <argument type="service" id="wordlist" />
+        </service>
     </services>
 </container>

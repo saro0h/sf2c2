@@ -27,7 +27,7 @@ class GameController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('AppBundle:Game:home.html.twig', array('game' => $this->getGameRunner()->loadGame()));
+        return $this->render('AppBundle:Game:home.html.twig', array('game' => $this->get('game_runner')->loadGame()));
     }
 
     /**
@@ -36,7 +36,7 @@ class GameController extends Controller
      */
     public function wonAction()
     {
-        $game = $this->getGameRunner()->resetGameOnSuccess();
+        $game = $this->get('game_runner')->resetGameOnSuccess();
 
         return array(array('game' => $game));
     }
@@ -46,7 +46,7 @@ class GameController extends Controller
      */
     public function failedAction()
     {
-        $game = $this->getGameRunner()->resetGameOnFailure();
+        $game = $this->get('game_runner')->resetGameOnFailure();
 
         return new Response($this->renderView('AppBundle:Game:failed.html.twig', array('game' => $game)));
     }
@@ -56,7 +56,7 @@ class GameController extends Controller
      */
     public function resetAction()
     {
-        $this->getGameRunner()->resetGame();
+        $this->get('game_runner')->resetGame();
 
         return $this->redirectToRoute('game_home');
     }
@@ -71,7 +71,7 @@ class GameController extends Controller
      */
     public function playLetterAction($letter)
     {
-        $game = $this->getGameRunner()->playLetter($letter);
+        $game = $this->get('game_runner')->playLetter($letter);
 
         if (!$game->isOver()) {
             return $this->redirectToRoute('game_home');
@@ -88,7 +88,7 @@ class GameController extends Controller
      */
     public function playWordAction(Request $request)
     {
-        $game = $this->getGameRunner()->playWord($request->request->get('word'));
+        $game = $this->get('game_runner')->playWord($request->request->get('word'));
 
         return $this->redirectToRoute($game->isWon() ? 'game_won' : 'game_failed');
     }
@@ -103,22 +103,5 @@ class GameController extends Controller
             'Martin Durand' => 'Best web application ever',
             'Paul Smith' => 'Awesomeness!',
         ));
-    }
-
-    private function getGameRunner()
-    {
-        $wordlist = new WordList();
-
-        $wordlist->addLoader('txt', new TextFileLoader());
-        $wordlist->addLoader('xml', new XmlFileLoader());
-
-        $wordlist->loadDictionaries(array(
-            $this->getParameter('kernel.root_dir').'/Resources/data/words.txt',
-            $this->getParameter('kernel.root_dir').'/Resources/data/words.xml'
-        ));
-
-        $gameContext = new GameContext($this->get('session'));
-
-        return new GameRunner($gameContext, $wordlist);
     }
 }
