@@ -114,21 +114,25 @@
         <source>login</source>
         <target>Se connecter</target>
       </trans-unit>
-      <trans-unit id="d56b699830e77ba53855679cb1d252de" resname="contact.sender">
+      <trans-unit id="1a3a54982b697e6a65ae838ee0253bce" resname="contact.sender">
         <source>contact.sender</source>
         <target>Qui êtes-vous ?</target>
       </trans-unit>
-      <trans-unit id="d56b699830e77ba53855679cb1d252df" resname="contact.message">
+      <trans-unit id="f13273ba00018ad2601abcbf75e033f8" resname="contact.message">
         <source>contact.message</source>
         <target>Votre message:</target>
       </trans-unit>
-      <trans-unit id="d56b699830e77ba53855679cb1d252dg" resname="contact.subject">
+      <trans-unit id="937f7f8cf12392227c085d2591da31f1" resname="contact.subject">
         <source>contact.subject</source>
         <target>Sujet :</target>
       </trans-unit>
-      <trans-unit id="d56b699830e77ba53855679cb1d252dj" resname="contact.submit">
+      <trans-unit id="129091fa44cfcd7cfe5518659d5694d0" resname="contact.submit">
         <source>contact.submit</source>
         <target>Envoyer mon message</target>
+      </trans-unit>
+      <trans-unit id="bda13cc2b6e737f765220f1c651e4645" resname="play_again">
+        <source>play_again</source>
+        <target>Nouvelle partie !</target>
       </trans-unit>
     </body>
   </file>

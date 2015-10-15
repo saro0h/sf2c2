@@ -13,5 +13,7 @@
 
     <p>
         {{ 'fail.message.game_over'|trans({'%word%': 'xilophon'})|raw }}.
+
+        <a href="{{ path('game_home') }}" class="btn-bg btn-default">{{ 'play_again'|trans }}</a>
     </p>
 {% endblock %}

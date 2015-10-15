@@ -13,5 +13,7 @@
 
     <p>
         {{ 'fail.message.congratulations'|trans({'%word%': 'software'})|raw }}.
+
+        <a href="{{ path('game_home') }}" class="btn-bg btn-default">{{ 'play_again'|trans }}</a>
     </p>
 {% endblock %}

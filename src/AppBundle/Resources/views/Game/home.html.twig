@@ -13,40 +13,21 @@
 
     <p class="attempts">
         {# {{ 'game.attempts'|trans({'%remaining_attempts%': 11}) }} #}
-        {{ 'game.attempts'|transchoice(11) }}
+        {{ 'game.attempts'|transchoice(game.remainingAttempts) }}
     </p>
 
     <ul class="word_letters">
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
-        <li class="letter hidden">
-            ?
-        </li>
+        {% for letter in game.wordLetters %}
+            <li class="letter {{ game.isLetterFound(letter) ? 'guessed' : 'not-guessed' }}">
+                {{- game.isLetterFound(letter) ? letter : '?' -}}
+            </li>
+        {% endfor %}
     </ul>
 
     <br class="clearfix" />
 
     <p class="attempts">
-        <a href="/game/reset">{{ 'game.reset'|trans }}</a>
+        <a href="{{ path('game_reset') }}">{{ 'game.reset'|trans }}</a>
     </p>
 
     <br class="clearfix" />
@@ -56,7 +37,7 @@
     <ul>
         {% for letter in 'A'..'Z' %}
             <li class="letter">
-                <a href="/game/letter/{{ letter }}">
+                <a href="{{ path('game_play_letter', {'letter' : letter}) }}">
                     {{ letter }}
                 </a>
             </li>
@@ -65,7 +46,7 @@
 
     <h2>{{ 'game.try_word'|trans }}</h2>
 
-    <form action="/game/word" method="post">
+    <form action="{{ path('game_play_word') }}" method="post">
         <p>
             <label for="word">{{ 'game.word'|trans }}</label>
             <input type="text" id="word" name="word"/>
