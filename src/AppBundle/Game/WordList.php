@@ -70,4 +70,9 @@ class WordList implements DictionaryLoaderInterface, WordListInterface
             $this->words[$length][] = $word;
         }
     }
+
+    public function getWords()
+    {
+        return $this->words;
+    }
 }
