@@ -14,3 +14,8 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+parameters:
+    dictionnaries:
+        - '%kernel.root_dir%/Resources/data/test.txt'
+    word_length: 3
