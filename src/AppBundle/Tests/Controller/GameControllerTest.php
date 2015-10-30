@@ -3,11 +3,10 @@
 namespace AppBundle\Tests\Controller;
 
 use AppBundle\Game\Game;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class GameControllerTest extends WebTestCase
+class GameControllerTest extends AbstractTest
 {
-    private $client;
+    protected $client;
 
     public function testHomepage()
     {
@@ -23,6 +22,7 @@ class GameControllerTest extends WebTestCase
         $expectedCount = Game::MAX_ATTEMPTS - 1;
 
         $crawler = $this->client->request('GET', '/en/game');
+
         $link = $crawler->selectLink('A')->link();
         $crawler = $this->client->click($link);
 
@@ -131,6 +131,7 @@ class GameControllerTest extends WebTestCase
     protected function setUp()
     {
         $this->client = static::createClient();
+        $this->logIn($this->client);
     }
 
     protected function tearDown()
