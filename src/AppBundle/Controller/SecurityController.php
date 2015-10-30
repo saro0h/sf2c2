@@ -19,9 +19,32 @@ class SecurityController extends Controller
      * )
      * @Template
      */
-    public function loginAction()
+    public function loginAction(Request $request)
     {
-        return array();
+        $helper = $this->get('security.authentication_utils');
+
+        return array(
+            'last_username' => $helper->getLastUsername(),
+            'error' => $helper->getLastAuthenticationError(),
+        );
+    }
+
+    /**
+     * @Route("/game/login-check", name="login_check")
+     */
+    public function loginCheckAction()
+    {
+        // Code never executed as the firewall intercept the request before the
+        // Routing component can even match the pattern with the action.
+    }
+
+    /**
+     * @Route("/game/logout", name="logout")
+     */
+    public function logoutAction()
+    {
+        // Code never executed as the firewall intercept the request before the
+        // Routing component can even match the pattern with the action.
     }
 
     /**
@@ -36,6 +59,8 @@ class SecurityController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $user = $this->get('app.credentials')->manageCredentials($user);
+
             $this->getDoctrine()->getManager()->persist($user);
             $this->getDoctrine()->getManager()->flush();
 

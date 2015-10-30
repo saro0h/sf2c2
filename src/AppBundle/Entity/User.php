@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Column(type="integer")
@@ -31,6 +32,11 @@ class User
      * @ORM\Column(type="integer")
      */
     private $age;
+
+    /**
+     * @ORM\Column
+     */
+    private $salt;
 
     /**
      * @ORM\Column(type="string")
@@ -91,5 +97,24 @@ class User
     public function setAddress(Address $address)
     {
         $this->address = $address;
+    }
+
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+    public function eraseCredentials()
+    {
     }
 }

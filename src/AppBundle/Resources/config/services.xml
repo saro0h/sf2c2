@@ -36,5 +36,10 @@
             <argument type="service" id="game_context" />
             <argument type="service" id="wordlist" />
         </service>
+
+        <service id="app.credentials" class="AppBundle\Service\AppCredentialsHandler">
+            <argument type="service" id="security.password_encoder" />
+            <argument type="service" id="security.secure_random" />
+        </service>
     </services>
 </container>

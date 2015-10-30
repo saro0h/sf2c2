@@ -7,12 +7,16 @@
 {% block content %}
     <h2>{{ 'access_account'|trans }}</h2>
 
-    <form action="/login_check" method="post">
+    {% if error %}
+        <div class="error">{{ error.message }}</div>
+    {% endif %}
+
+    <form action="{{ path('login_check') }}" method="post">
         <label for="username">{{ 'username'|trans }}</label>
-        <input type="text" id="username" name="my_login" value="" />
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
         <label for="password">{{ 'password'|trans }}</label>
-        <input type="password" id="password" name="my_secret" />
+        <input type="password" id="password" name="_password" />
 
         <button type="submit">{{ 'button.login'|trans }}</button>
     </form>

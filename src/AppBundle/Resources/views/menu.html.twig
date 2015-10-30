@@ -6,9 +6,15 @@
         <li>
             <a href="{{ path('register') }}">{{ 'menu.register'|trans }}</a>
         </li>
+        {% if app.user %}
+            <li>
+                <a href="{{ path('logout') }}">{{ 'menu.logout'|trans }}</a>
+            </li>
+        {% else %}
         <li>
-            <a href="/signin">{{ 'menu.login'|trans }}</a>
+            <a href="{{ path('login') }}">{{ 'menu.login'|trans }}</a>
         </li>
+        {% endif %}
         <li>
             <a href="{{ path('contact') }}">{{ 'menu.contact'|trans }}</a>
         </li>
