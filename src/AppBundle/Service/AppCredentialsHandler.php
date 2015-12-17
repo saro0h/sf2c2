@@ -2,7 +2,7 @@
 
 namespace AppBundle\Service;
 
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Util\SecureRandom;
 use AppBundle\Entity\User;
 
@@ -12,7 +12,7 @@ class AppCredentialsHandler
 
     private $saltGenerator;
 
-    public function __construct(UserPasswordEncoder $encoder, SecureRandom $saltGenerator)
+    public function __construct(UserPasswordEncoderInterface $encoder, SecureRandom $saltGenerator)
     {
         $this->encoder = $encoder;
         $this->saltGenerator = $saltGenerator;
